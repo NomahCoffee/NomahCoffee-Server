@@ -1,0 +1,59 @@
+[
+    {
+        "model": "authapp.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$MB9dSIQ8vjPk$IHNV7NBEJP2vwY6+STa0BoQZJ5bBfbnbBs9AmNUuQpQ=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "arianagrande",
+            "first_name": "Ariana",
+            "last_name": "Grande",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2021-02-12T01:08:35.694Z",
+            "email": "arianagrande@gmail.com",
+            "phone": "1234567890",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authapp.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$5JofwM6et8n0$CnL76WgyGykMXs1OBV+qD8B2RHvTzYsUtIIq/8QPLZQ=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "jerryseinfeld",
+            "first_name": "Jerry",
+            "last_name": "Seinfeld",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2021-02-12T01:08:35.694Z",
+            "email": "jerry.seinfeld@yahoo.com",
+            "phone": "0987654321",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "authapp.user",
+        "pk": 3,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$oe8sSAuzwCsh$FFV2DP2umTFBv8vBaYArW4anddrnlcEe4TeIXHk9PA4=",
+            "last_login": "2021-02-15T02:55:38.337Z",
+            "is_superuser": false,
+            "username": "hughjackman",
+            "first_name": "Hugh",
+            "last_name": "Jackman",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2021-02-15T02:52:25.688Z",
+            "email": "hjackman@gmail.com",
+            "phone": "5647382910",
+            "groups": [],
+            "user_permissions": []
+        }
+    }
+]
