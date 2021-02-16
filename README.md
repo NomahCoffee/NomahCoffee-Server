@@ -46,7 +46,7 @@ If both of these steps are completed properly, you should see your command line 
    ```
 6. Set environment variables by creating a `.env` file in the top level directory and add the environment variables. You will need to contact a project administrator to obtain the variables. WARNING: You cannot properly run this project without the environment variables.
    ```
-   📦 NomahCoffeeServer
+   📦 NomahCoffee-Server
       📂 apiapp
       📂 authapp
       📂 nomahcoffee
@@ -71,7 +71,7 @@ If both of these steps are completed properly, you should see your command line 
    ```
    python manage.py createsuperuser
    ```
-9. Run the server and then login to the admin dashboard at `http://127.0.0.1:8000/admin/` with your newly created super user
+9. Run the server and then login to the admin dashboard at [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/) with your newly created super user
    ```
    python manage.py runserver
    ```
