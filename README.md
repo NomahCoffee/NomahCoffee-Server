@@ -29,8 +29,8 @@ Run the following command. If you see a response like `Python 3.9.1`, then you a
 2. Create and then activate your virtual environment.
 If both of these steps are completed properly, you should see your command line start with your virtual environemnt (i.e. `(myvirtenv)`)
    ```
-   python3 -m venv myvirtenv
-   source myvirtenv/bin/activate
+   python3 -m venv venv
+   source venv/bin/activate
    ```
 3. Make sure to change directory into the repository
    ```
@@ -65,6 +65,8 @@ If both of these steps are completed properly, you should see your command line 
 7. Populate the database with sample data
    ```
    python manage.py loaddata apiapp/fixtures/coffee.json
+   python manage.py loaddata apiapp/fixtures/storehours.json
+   python manage.py loaddata apiapp/fixtures/storelocations.json
    python manage.py loaddata authapp/fixtures/users.json
    ```
 8. Create a super user to access the admin dashboard

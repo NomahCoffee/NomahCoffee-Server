@@ -1,0 +1,50 @@
+[
+  {
+    "model": "apiapp.storelocation",
+    "pk": 1,
+    "fields": {
+      "name": "Division",
+      "image": "",
+      "street": "4525 SE Division Stree",
+      "city": "Portland",
+      "state": "OR",
+      "zip_code": "97206"
+    }
+  },
+  {
+    "model": "apiapp.storelocation",
+    "pk": 2,
+    "fields": {
+      "name": "Belmont",
+      "image": "",
+      "street": "3356 SE Belmont Street",
+      "city": "Portland",
+      "state": "OR",
+      "zip_code": "97214"
+    }
+  },
+  {
+    "model": "apiapp.storelocation",
+    "pk": 3,
+    "fields": {
+      "name": "Ace Hotel",
+      "image": "",
+      "street": "1026 SW Stark Street",
+      "city": "Portland",
+      "state": "OR",
+      "zip_code": "97205"
+    }
+  },
+  {
+    "model": "apiapp.storelocation",
+    "pk": 4,
+    "fields": {
+      "name": "Downtown",
+      "image": "",
+      "street": "128 SW 3rd Avenue",
+      "city": "Portland",
+      "state": "OR",
+      "zip_code": "97204"
+    }
+  }
+]

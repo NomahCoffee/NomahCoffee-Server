@@ -1,0 +1,72 @@
+[
+    {
+        "model": "apiapp.storehours",
+        "pk": 1,
+        "fields": {
+            "day": "Monday",
+            "from_hour": "06:00:00",
+            "to_hour": "20:00:00",
+            "closed": false
+        }
+    },
+    {
+        "model": "apiapp.storehours",
+        "pk": 2,
+        "fields": {
+            "day": "Tuesday",
+            "from_hour": null,
+            "to_hour": null,
+            "closed": true
+        }
+    },
+    {
+        "model": "apiapp.storehours",
+        "pk": 3,
+        "fields": {
+            "day": "Wednesday",
+            "from_hour": null,
+            "to_hour": null,
+            "closed": true
+        }
+    },
+    {
+        "model": "apiapp.storehours",
+        "pk": 4,
+        "fields": {
+            "day": "Thursday",
+            "from_hour": "06:00:00",
+            "to_hour": "20:00:00",
+            "closed": false
+        }
+    },
+    {
+        "model": "apiapp.storehours",
+        "pk": 5,
+        "fields": {
+            "day": "Friday",
+            "from_hour": "06:00:00",
+            "to_hour": "20:00:00",
+            "closed": false
+        }
+    },
+    {
+        "model": "apiapp.storehours",
+        "pk": 6,
+        "fields": {
+            "day": "Saturday",
+            "from_hour": "06:00:00",
+            "to_hour": "20:00:00",
+            "closed": false
+        }
+    },
+    {
+        "model": "apiapp.storehours",
+        "pk": 7,
+        "fields": {
+            "day": "Sunday",
+            "from_hour": "06:00:00",
+            "to_hour": "14:00:00",
+            "closed": false
+        }
+    }
+]
