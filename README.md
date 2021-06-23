@@ -15,7 +15,7 @@ Make sure you have all of the prerequisites and then follow the steps to get the
 ### Prerequisites
 
 * Python
-Run the following command. If you see a response like `Python 3.9.1`, then you are set to continue. If not, make sure you download the latest stable version of Pyhton
+Run the following command. If you see a response like `Python 3.9.1`, then you are set to continue. If not, make sure you download the latest stable version of Python
   ```
   python3 --version
   ```
