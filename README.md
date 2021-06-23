@@ -40,11 +40,7 @@ If both of these steps are completed properly, you should see your command line 
    ```
    pip install -r requirements.txt
    ```
-5. Setup the database schema
-   ```
-   python manage.py migrate
-   ```
-6. Set environment variables by creating a `.env` file in the top level directory and add the environment variables. You will need to contact a project administrator to obtain the variables. WARNING: You cannot properly run this project without the environment variables.
+5. Set environment variables by creating a `.env` file in the top level directory and add the environment variables. You will need to contact a project administrator to obtain the variables. WARNING: You cannot properly run this project without the environment variables.
    ```
    📦 NomahCoffee-Server
       📂 apiapp
@@ -61,6 +57,10 @@ If both of these steps are completed properly, you should see your command line 
    ```
    SECRET_KEY=[secret key here]
    DEBUG=[debug value here]
+   ```
+6. Setup the database schema
+   ```
+   python manage.py migrate
    ```
 7. Populate the database with sample data
    ```
