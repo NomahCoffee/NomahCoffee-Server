@@ -1,8 +1,8 @@
-## Nomah Coffee - Server
+# Nomah Coffee - Server
 
 This repository holds the backend code for the Nomah Coffee website and iOS mobile application.
 
-### Built With
+## Built With
 The server is written in Django / Python. It uses DjangoRestFramework to serialize models into JSON for API call responses and Djoser to handle basic authenitcation actions such as registration, login, logout, password reset and account activation.
 * [Django](https://www.djangoproject.com/)
 * [Django Rest Framework](https://www.django-rest-framework.org/)
@@ -12,19 +12,19 @@ The server is written in Django / Python. It uses DjangoRestFramework to seriali
 
 Make sure you have all of the prerequisites and then follow the steps to get the server running locally on your machine.
 
-### Prerequisites
+## Prerequisites
 
 * Python
-Run the following command. If you see a response like `Python 3.9.1`, then you are set to continue. If not, make sure you download the latest stable version of Pyhton
+Run the following command. If you see a response like `Python 3.9.1`, then you are set to continue. If not, make sure you download the latest stable version of Python
   ```
   python3 --version
   ```
 
-### Installation
+## Installation
 
 1. Clone the repo
    ```
-   git clone https://github.com/calebrudnicki/NomahCoffee-Server.git
+   git clone https://github.com/NomahCoffee/NomahCoffee-Server.git
    ```
 2. Create and then activate your virtual environment.
 If both of these steps are completed properly, you should see your command line start with your virtual environemnt (i.e. `(myvirtenv)`)
@@ -40,11 +40,7 @@ If both of these steps are completed properly, you should see your command line 
    ```
    pip install -r requirements.txt
    ```
-5. Setup the database schema
-   ```
-   python manage.py migrate
-   ```
-6. Set environment variables by creating a `.env` file in the top level directory and add the environment variables. You will need to contact a project administrator to obtain the variables. WARNING: You cannot properly run this project without the environment variables.
+5. Set environment variables by creating a `.env` file in the top level directory and add the environment variables. You will need to contact a project administrator to obtain the variables. WARNING: You cannot properly run this project without the environment variables.
    ```
    📦 NomahCoffee-Server
       📂 apiapp
@@ -61,6 +57,10 @@ If both of these steps are completed properly, you should see your command line 
    ```
    SECRET_KEY=[secret key here]
    DEBUG=[debug value here]
+   ```
+6. Setup the database schema
+   ```
+   python manage.py migrate
    ```
 7. Populate the database with sample data
    ```
