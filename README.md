@@ -1,8 +1,8 @@
-## Nomah Coffee - Server
+# Nomah Coffee - Server
 
 This repository holds the backend code for the Nomah Coffee website and iOS mobile application.
 
-### Built With
+## Built With
 The server is written in Django / Python. It uses DjangoRestFramework to serialize models into JSON for API call responses and Djoser to handle basic authenitcation actions such as registration, login, logout, password reset and account activation.
 * [Django](https://www.djangoproject.com/)
 * [Django Rest Framework](https://www.django-rest-framework.org/)
@@ -12,7 +12,7 @@ The server is written in Django / Python. It uses DjangoRestFramework to seriali
 
 Make sure you have all of the prerequisites and then follow the steps to get the server running locally on your machine.
 
-### Prerequisites
+## Prerequisites
 
 * Python
 Run the following command. If you see a response like `Python 3.9.1`, then you are set to continue. If not, make sure you download the latest stable version of Python
@@ -20,7 +20,7 @@ Run the following command. If you see a response like `Python 3.9.1`, then you a
   python3 --version
   ```
 
-### Installation
+## Installation
 
 1. Clone the repo
    ```
