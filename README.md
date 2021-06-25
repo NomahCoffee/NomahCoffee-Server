@@ -24,7 +24,7 @@ Run the following command. If you see a response like `Python 3.9.1`, then you a
 
 1. Clone the repo
    ```
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/calebrudnicki/NomahCoffee-Server.git
    ```
 2. Create and then activate your virtual environment.
 If both of these steps are completed properly, you should see your command line start with your virtual environemnt (i.e. `(myvirtenv)`)

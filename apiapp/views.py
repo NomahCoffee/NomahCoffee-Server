@@ -15,6 +15,8 @@ from rest_framework.permissions import IsAuthenticated
 def api_root(request, format=None):
     return Response({
         'users': reverse('user-list', request=request, format=format),
+        'superusers': reverse('superuser-list', request=request, format=format),
+        'staff': reverse('staff-list', request=request, format=format),
         'coffees': reverse('coffee-list', request=request, format=format),
         'hours': reverse('hours-list', request=request, format=format),
         'locations': reverse('locations-list', request=request, format=format)

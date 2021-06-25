@@ -6,7 +6,7 @@ from .models import Coffee, StoreHours, StoreLocation
 class CoffeeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Coffee
-        fields = ['url', 'id', 'name', 'price', 'image', 'description', 'in_stock']
+        fields = ['url', 'id', 'created', 'name', 'price', 'image', 'description', 'in_stock']
 
 class StoreHoursSerializer(serializers.ModelSerializer):
     class Meta:
