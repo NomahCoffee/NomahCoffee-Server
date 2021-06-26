@@ -6,7 +6,7 @@
             "created": "2021-02-11T22:12:03.705Z",
             "name": "Americano",
             "price": 3.0,
-            "image": "",
+            "image": "coffee_images/americano.jpg",
             "description": "Americano is espresso and hot water made to be about the same strength and amount as a normal cup of drip coffee, but the process gives it a stronger, more intense flavor. It is made by diluting an espresso with boiling water. It is an Italian drink referred to as the “American Coffee,” hence its name.",
             "in_stock": true
         }
@@ -18,7 +18,7 @@
             "created": "2021-02-11T23:48:13.365Z",
             "name": "Cafe Mocha",
             "price": 4.0,
-            "image": "",
+            "image": "coffee_images/mocha.jpg",
             "description": "Also called a mochaccino, a café mocha differs from a latte because of one important twist: the addition of chocolate flavoring. The name comes from its city of origin, Mocha, Yemen. As a twist from the traditional mocha, a white mocha is said to be Miley Cyrus’s drink of choice.",
             "in_stock": true
         }
@@ -30,7 +30,7 @@
             "created": "2021-02-11T23:48:13.365Z",
             "name": "Cappuccino",
             "price": 3.0,
-            "image": "",
+            "image": "coffee_images/cappuccino.jpg",
             "description": "Cappuccino is an espresso-based drink topped with steamed milk foam. This drink offers many variations such as cream instead of foamed milk, and common flavoring options including cinnamon, chocolate, vanilla and hazelnut.",
             "in_stock": true
         }
@@ -42,7 +42,7 @@
             "created": "2021-02-11T23:48:13.365Z",
             "name": "Cold Brew",
             "price": 4.5,
-            "image": "",
+            "image": "coffee_images/coldbrew.jpg",
             "description": "As simple as it sounds, cold brew coffee is made by steeping ground beans in cold or room-temperature water to achieve temperate flavors and create a chemical profile different from that of traditionally brewed coffee.",
             "in_stock": true
         }
@@ -54,7 +54,7 @@
             "created": "2021-02-11T23:48:13.365Z",
             "name": "Iced Coffee",
             "price": 3.75,
-            "image": "",
+            "image": "coffee_images/icedcoffee.jpg",
             "description": "Iced coffee is as simple as it sounds, but many baristas will use cold brew coffee and pour it into ice for a cold, refreshing coffee drink that blends well with flavors and infusions.",
             "in_stock": true
         }
@@ -66,7 +66,7 @@
             "created": "2021-02-11T23:48:13.365Z",
             "name": "Latte",
             "price": 4.0,
-            "image": "",
+            "image": "coffee_images/latte.jpg",
             "description": "A classic latte—simply espresso and steamed milk with a dash of froth on top—is the base of many flavored coffee drinks. Its name is an English derivative of the term caffelatte which means “milk coffee.” The latte is easily one of the most popular coffee drinks. A caramel latte is reportedly superstar Taylor Swift’s go-to drink.",
             "in_stock": true
         }
