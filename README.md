@@ -30,7 +30,12 @@ Make sure you have all of the prerequisites and then follow the steps to get the
 If both of these steps are completed properly, you should see your command line start with your virtual environemnt (i.e. `(myvirtenv)`)
    ```
    python3 -m venv venv
+   
+   ## For Mac / Linux users
    source venv/bin/activate
+   
+   ## For Windows users
+   venv\Scripts\activate
    ```
 3. Make sure to change directory into the repository
    ```
