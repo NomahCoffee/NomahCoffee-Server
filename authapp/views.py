@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 from .models import User, Cart
 from apiapp.models import Coffee
-from .serializers import CartSerializer, UserCreateSerializer
+from .serializers import CartSerializer, UserCreateSerializer, CurrentUserSerializer
 
 from rest_framework import mixins, generics, permissions, renderers, status
 from rest_framework.decorators import api_view, permission_classes
@@ -78,11 +78,8 @@ def update_cart(request):
         cart_serializer.create(newCartItem)
 
         # Return the user object associated with the newly added cart item
-        user_serializer = UserCreateSerializer(user)
-        if user_serializer.is_valid():
-            user_serializer.save()
-            return JsonResponse(user_serializer.data, status=status.HTTP_201_CREATED) 
-        return JsonResponse(user_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        user_serializer = CurrentUserSerializer(user)
+        return JsonResponse(user_serializer.data, status=status.HTTP_201_CREATED) 
 
     # In the case of a PUT, the client must provide a the following. This handles the
     # case where a the quantity value of an existing cart item will be edited.
@@ -112,11 +109,8 @@ def update_cart(request):
         cartItem.save()
 
         # Return the user object associated with the newly added cart item
-        user_serializer = UserCreateSerializer(cartItem.person)
-        if user_serializer.is_valid():
-            user_serializer.save()
-            return JsonResponse(user_serializer.data, status=status.HTTP_201_CREATED) 
-        return JsonResponse(user_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        user_serializer = CurrentUserSerializer(cartItem.person)
+        return JsonResponse(user_serializer.data, status=status.HTTP_201_CREATED) 
 
     # In the case of a DELETE, the client must provide a the following. This handles the
     # case where one spefic cart item is to be deleted from a users cart.
@@ -139,8 +133,5 @@ def update_cart(request):
         cartItem.delete()
 
         # Return the user object associated with the newly added cart item
-        user_serializer = UserCreateSerializer(cartItem.person)
-        if user_serializer.is_valid():
-            user_serializer.save()
-            return JsonResponse(user_serializer.data, status=status.HTTP_201_CREATED) 
-        return JsonResponse(user_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        user_serializer = CurrentUserSerializer(cartItem.person)
+        return JsonResponse(user_serializer.data, status=status.HTTP_201_CREATED) 
