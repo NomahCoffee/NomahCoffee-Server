@@ -1,5 +1,6 @@
 from warnings import catch_warnings
 from django.shortcuts import render
+from django.conf import settings
 
 from .models import User, Cart
 from apiapp.models import Coffee
@@ -12,6 +13,8 @@ from rest_framework.reverse import reverse
 from rest_framework.permissions import IsAuthenticated
 
 from django.http.response import JsonResponse
+
+import stripe
 
 # Create your views here.
 
@@ -135,3 +138,55 @@ def update_cart(request):
         # Return the user object associated with the newly added cart item
         user_serializer = CurrentUserSerializer(cartItem.person)
         return JsonResponse(user_serializer.data, status=status.HTTP_201_CREATED) 
+
+@api_view(['POST'])
+def payment_sheet(request):
+    stripe.api_key = settings.STRIPE_TEST_KEY
+
+    # Use an existing Customer ID if this is a returning customer
+    customer = stripe.Customer.create()
+
+    # Set up the user's ephemeral key
+    ephemeralKey = stripe.EphemeralKey.create(
+        customer=customer['id'],
+        stripe_version='2020-08-27',
+    )
+
+    # Make sure the request contains a userId
+    userId = request.POST.get('userId')
+    if not userId:
+        return JsonResponse({'message': 'The user id does not exist'}, status=status.HTTP_400_BAD_REQUEST)
+
+    # Grab the specific user by the userId passed by the request
+    try:
+        user = User.objects.get(pk=userId)
+    except User.DoesNotExist: 
+        return JsonResponse({'message': 'The user does not exist'}, status=status.HTTP_404_NOT_FOUND)
+
+    # Serialize the user and grab their cart field, which should be an updated cart for this specific user 
+    user_serializer = CurrentUserSerializer(user)
+    user_cart = user_serializer.data['cart']
+
+    # Tally up the total price of the cart
+    totalPrice = 0
+    for cartItem in user_cart:
+        try:
+            cartItem = Cart.objects.get(pk=cartItem['id'])
+            totalPrice += cartItem.coffee.price * cartItem.quantity
+        except Cart.DoesNotExist:
+            return JsonResponse({'message': 'A cart item does not exist'}, status=status.HTTP_404_NOT_FOUND)
+    
+    # Create a payment intent with a total amount, currency, and customer id
+    paymentIntent = stripe.PaymentIntent.create(
+        amount=int(totalPrice * 100),
+        currency='usd',
+        customer=customer['id']
+    )
+
+    # Create a dictionary to send back to the client with pertinent info to trigger a payment sheet
+    dict = {
+        "paymentIntent": paymentIntent.client_secret,
+        "ephemeralKey": ephemeralKey.secret,
+        "customer": customer.id
+    }
+    return JsonResponse(dict)

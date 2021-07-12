@@ -9,5 +9,6 @@ urlpatterns = [
     path('', include('djoser.urls.authtoken')),
     path('superusers/', views.SuperuserList.as_view(), name='superuser-list'),
     path('staff/', views.StaffList.as_view(), name='staff-list'),
-    url(r'update_cart/', views.update_cart)
+    url(r'update_cart/', views.update_cart),
+    url(r'payment_sheet/', views.payment_sheet)
 ]
