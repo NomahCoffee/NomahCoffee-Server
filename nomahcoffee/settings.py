@@ -29,6 +29,8 @@ DEBUG = config('DEBUG', cast=bool, default=True)
 
 ALLOWED_HOSTS = []
 
+# Stripe Test Key
+STRIPE_TEST_KEY = 'sk_test_aU1ituTUen0k4Hxh61zfH7ES00XINu8f1u'
 
 # Application definition
 
