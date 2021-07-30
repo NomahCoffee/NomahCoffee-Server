@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool, default=True)
 
-ALLOWED_HOSTS = ['nomah-coffee.herokuapp.com']
+ALLOWED_HOSTS = ['nomah-coffee.herokuapp.com', '127.0.0.1']
 
 # Stripe Test Key
 STRIPE_TEST_KEY = 'sk_test_aU1ituTUen0k4Hxh61zfH7ES00XINu8f1u'
