@@ -1,1 +1,1 @@
-web: gunicorn nomahcoffee.wsgi:app
+web: gunicorn nomahcoffee.wsgi
