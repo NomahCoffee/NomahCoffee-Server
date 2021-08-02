@@ -29,8 +29,8 @@ DEBUG = config('DEBUG', cast=bool, default=True)
 
 ALLOWED_HOSTS = ['nomah-coffee.herokuapp.com', '127.0.0.1']
 
-# Stripe Test Key
-STRIPE_TEST_KEY = 'sk_test_aU1ituTUen0k4Hxh61zfH7ES00XINu8f1u'
+# Stripe Test Secret Key
+STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
 
 # Application definition
 
@@ -87,8 +87,12 @@ AUTH_USER_MODEL = 'authapp.User'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': config('DATABASE_NAME'),
+        'USER': config('DATABASE_USER'),
+        'PASSWORD': config('DATABASE_PASSWORD'),
+        'HOST': config('DATABASE_HOST'),
+        'PORT': config('DATABASE_PORT'),
     }
 }
 
@@ -163,7 +167,3 @@ MEDIA_URL = '/media/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(STATIC_ROOT, 'media')
-
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, 'static'),
-# )

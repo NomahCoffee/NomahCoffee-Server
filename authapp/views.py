@@ -178,7 +178,7 @@ def clear_cart(request):
 
 @api_view(['POST'])
 def payment_sheet(request):
-    stripe.api_key = settings.STRIPE_TEST_KEY
+    stripe.api_key = settings.STRIPE_SECRET_KEY
 
     # Make sure the request contains a userId
     userId = request.POST.get('userId')
