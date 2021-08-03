@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool, default=True)
 
-ALLOWED_HOSTS = ['nomah-coffee.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['nomah-coffee.herokuapp.com', '127.0.0.1', 'nomahcoffee.com', 'www.nomahcoffee.com']
 
 # Stripe Test Secret Key
 STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
@@ -86,7 +86,11 @@ AUTH_USER_MODEL = 'authapp.User'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'dev': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    },
+    'prod': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': config('DATABASE_NAME'),
         'USER': config('DATABASE_USER'),
@@ -96,6 +100,7 @@ DATABASES = {
     }
 }
 
+DATABASES['default'] = DATABASES['dev' if DEBUG else 'prod']
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
