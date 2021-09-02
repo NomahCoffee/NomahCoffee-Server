@@ -6,6 +6,7 @@ from apiapp.models import Coffee
 
 class User(AbstractUser):
     email = models.EmailField(verbose_name='email', max_length=255, unique=True)
+    stripe_id = models.CharField(verbose_name='Stripe ID', max_length=255, default="", null=True)
     REQUIRED_FIELDS = ['username', 'first_name', 'last_name', 'is_superuser', 'is_staff']
     USERNAME_FIELD = 'email'
 

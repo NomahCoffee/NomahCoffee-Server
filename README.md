@@ -3,7 +3,8 @@
 This repository holds the backend code for the Nomah Coffee website and iOS mobile application.
 
 ## Built With
-The server is written in Django / Python. It uses DjangoRestFramework to serialize models into JSON for API call responses and Djoser to handle basic authenitcation actions such as registration, login, logout, password reset and account activation.
+
+The server is written in Django / Python. It uses DjangoRestFramework to serialize models into JSON for API call responses and Djoser to handle basic authentication actions such as registration, login, logout, password reset and account activation.
 * [Django](https://www.djangoproject.com/)
 * [Django Rest Framework](https://www.django-rest-framework.org/)
 * [Djoser](https://djoser.readthedocs.io/en/latest/#)
@@ -14,8 +15,7 @@ Make sure you have all of the prerequisites and then follow the steps to get the
 
 ## Prerequisites
 
-* Python
-Run the following command. If you see a response like `Python 3.9.1`, then you are set to continue. If not, make sure you download the latest stable version of Python
+* Python - Run the following command. If you see a response like `Python 3.9.1`, then you are set to continue. If not, make sure you download the latest stable version of Python
   ```
   python3 --version
   ```
@@ -30,7 +30,12 @@ Run the following command. If you see a response like `Python 3.9.1`, then you a
 If both of these steps are completed properly, you should see your command line start with your virtual environemnt (i.e. `(myvirtenv)`)
    ```
    python3 -m venv venv
+   
+   ## For Mac / Linux users
    source venv/bin/activate
+   
+   ## For Windows users
+   venv\Scripts\activate
    ```
 3. Make sure to change directory into the repository
    ```

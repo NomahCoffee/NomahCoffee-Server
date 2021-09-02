@@ -27,8 +27,10 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool, default=True)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['nomah-coffee.herokuapp.com', '127.0.0.1', 'nomahcoffee.com', 'www.nomahcoffee.com']
 
+# Stripe Test Secret Key
+STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
 
 # Application definition
 
@@ -56,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -92,12 +95,21 @@ AUTH_USER_MODEL = 'authapp.User'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'dev': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    },
+    'prod': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': config('DATABASE_NAME'),
+        'USER': config('DATABASE_USER'),
+        'PASSWORD': config('DATABASE_PASSWORD'),
+        'HOST': config('DATABASE_HOST'),
+        'PORT': config('DATABASE_PORT'),
     }
 }
 
+DATABASES['default'] = DATABASES['dev' if DEBUG else 'prod']
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -125,8 +137,6 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.BasicAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES': (
@@ -143,7 +153,8 @@ DJOSER = {
     'USER_CREATE_PASSWORD_RETYPE': True,
     'SERIALIZERS': {
         'user_create': 'authapp.serializers.UserCreateSerializer',
-        'user': 'authapp.serializers.UserCreateSerializer',
+        'user': 'authapp.serializers.UserSerializer',
+        'current_user': 'authapp.serializers.CurrentUserSerializer',
     }
 }
 
@@ -168,8 +179,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_ROOT = os.path.join(STATIC_ROOT, 'media')
