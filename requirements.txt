@@ -7,9 +7,9 @@ coreschema==0.0.4
 cryptography==3.4.4
 defusedxml==0.7.0rc2
 Django==3.1.6
-django-templated-mail==1.1.1
-djangorestframework==3.12.2
-djangorestframework-simplejwt==4.6.0
+django-templated-mail
+djangorestframework
+djangorestframework-simplejwt
 djoser==2.1.0
 idna==2.10
 itypes==1.2.0

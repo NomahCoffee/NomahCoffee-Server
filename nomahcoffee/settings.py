@@ -44,9 +44,11 @@ INSTALLED_APPS = [
     'djoser',
     'authapp.apps.AuthappConfig',
     'apiapp.apps.ApiappConfig',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -55,6 +57,13 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
+#ALTERNATIVE 
+#CORS_ORIGIN_ALLOW_ALL = False
+#CORS_ORIGIN_WHITELIST = (
+#       'http://localhost:4200',
+#)
 
 ROOT_URLCONF = 'nomahcoffee.urls'
 
