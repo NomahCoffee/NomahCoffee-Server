@@ -10,9 +10,9 @@ cryptography==3.4.4
 defusedxml==0.7.0rc2
 distro==1.5.0
 Django==3.1.6
-django-templated-mail==1.1.1
-djangorestframework==3.12.2
-djangorestframework-simplejwt==4.6.0
+django-templated-mail
+djangorestframework
+djangorestframework-simplejwt
 djoser==2.1.0
 docker==5.0.0
 docker-compose==1.29.2
