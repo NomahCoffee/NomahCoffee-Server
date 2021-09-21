@@ -27,8 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool, default=True)
 
-ALLOWED_HOSTS = ['nomah-coffee.herokuapp.com',
-                 '127.0.0.1', 'nomahcoffee.com', 'www.nomahcoffee.com']
+ALLOWED_HOSTS = ['nomah-coffee.herokuapp.com', '127.0.0.1', 'nomahcoffee.com', 'www.nomahcoffee.com']
 
 # Stripe Test Secret Key
 STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
@@ -69,11 +68,6 @@ CORS_ORIGIN_WHITELIST = (
     'nomahcoffee.com',
     'www.nomahcoffee.com'
 )
-# ALTERNATIVE
-#CORS_ORIGIN_ALLOW_ALL = False
-# CORS_ORIGIN_WHITELIST = (
-#       'http://localhost:4200',
-# )
 
 ROOT_URLCONF = 'nomahcoffee.urls'
 
