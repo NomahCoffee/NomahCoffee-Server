@@ -61,12 +61,13 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
-CORS_ORIGIN_ALLOW_ALL = True
-#ALTERNATIVE 
-#CORS_ORIGIN_ALLOW_ALL = False
-#CORS_ORIGIN_WHITELIST = (
-#       'http://localhost:4200',
-#)
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = (
+    'nomah-coffee.herokuapp.com',
+    '127.0.0.1',
+    'nomahcoffee.com',
+    'www.nomahcoffee.com'
+)
 
 ROOT_URLCONF = 'nomahcoffee.urls'
 
